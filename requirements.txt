@@ -1,0 +1,13 @@
+# Versions recorded from the experiment environment where available.
+matbench==0.6
+networkx==3.2.1
+numpy==1.22.4
+pandas==2.2.3
+psutil==6.1.0
+pymatgen==2023.9.25
+scikit-learn==1.0.1
+scipy==1.7.3
+spglib==2.5.0
+torch==2.4.0
+transformers==4.49.0
+tqdm==4.67.1
