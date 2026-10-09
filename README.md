@@ -1,17 +1,16 @@
-# Final Symmetry2Vec code and data bundle
+# Symmetry2Vec code and data bundle
 
 This bundle contains the archived code and local data required to reproduce the
-KG and LM vectors and to run the Final Matbench downstream
+KG and LM WP vectors and to run the Final Matbench downstream
 experiments for KG, LM, Wren, one-hot, and coordination
 ABX one-hot.
 
 All commands below assume Linux, CUDA, and that the current directory is the
-relevant component directory.
-
+relevant component directory. 
 ## Directory layout
 
 ```text
-final_code/
+Symmetry2Vec/
   README.md
   requirements.txt
   kg/
@@ -33,13 +32,13 @@ final_code/
     splits/                      ABX role cache and composition-grouped split
     vector_registry.json         portable representation paths
 
-final_data/
-  kg/                            final KG WP/full/relation vectors
-  lm/                            final LM WP table and coverage
+  data/
+    kg/                          final KG WP/full/relation vectors
+    lm/                          final LM WP table and coverage
 ```
 
-`manifest.sha256` records SHA-256 hashes for all files in `final_code` and
-`final_data` except the manifest itself.
+`manifest.sha256` records SHA-256 hashes for all files in this bundle except
+the manifest itself.
 
 ## 1. KG
 
@@ -57,7 +56,7 @@ and 14 Bravais lattice types.
 Train KG with the archived configuration:
 
 ```bash
-cd final_code/kg
+cd Symmetry2Vec/kg
 DEVICE=cuda:0 bash scripts/run_kg_training.sh
 ```
 
@@ -72,7 +71,7 @@ filtered negatives per positive, learning rate 0.001, margin 1.0, L1 distance,
 and seed 13. Generated files are placed under `kg/artifacts/`.
 
 The original graph and vector outputs are retained in
-`kg/data/kg_reference/` and `../final_data/kg/`.
+`kg/data/kg_reference/` and `data/kg/`.
 
 ## 2. LM
 
@@ -87,7 +86,7 @@ The exact prebuilt corpus, tokenizer, and BERT initialization are included, so
 LM training does not require network access or the original MP CIF archive:
 
 ```bash
-cd final_code/lm
+cd Symmetry2Vec/lm
 NPROC_PER_NODE=1 bash scripts/run_lm_training.sh
 ```
 
@@ -131,7 +130,7 @@ The unified runner exposes four WP representations:
 Run all five official folds of any method-task combination with one script:
 
 ```bash
-cd final_code/downstream
+cd Symmetry2Vec/downstream
 python scripts/run_matbench.py \
   --method kg \
   --task mp_e_form
@@ -146,7 +145,7 @@ sequentially in five independent child processes, so the RNG is reset to seed
 Default settings are 1,000 epochs, patience 100, batch size 128, validation
 fraction 0.1, fold/validation seed 42, no site-symmetry input channel, and a
 0.48 per-process CUDA memory fraction. Element features are the packaged
-Mat2Vec table. Space groups and Wyckoff position assignments are recomputed from each
+Mat2Vec table. Space groups and WP assignments are recomputed from each
 Matbench `Structure` with pymatgen `SpacegroupAnalyzer` using `symprec=0.1`
 and `angle_tolerance=5.0`; pymatgen uses spglib underneath.
 
@@ -175,7 +174,7 @@ cache is included.
 Run one official fold:
 
 ```bash
-cd final_code/downstream
+cd Symmetry2Vec/downstream
 python scripts/run_perovskites_coordination_abx.py \
   --split-kind official \
   --fold 0
@@ -196,7 +195,7 @@ python scripts/prepare_perovskites_coordination_abx_cache.py --force
   `lm/data/source_profiles_manifest.json`.
 - Wren source: `downstream/sources/wren444/bra-alg-off.json`.
 - Matbench structures and targets: supplied by `matbench==0.6` at runtime.
-- Final vector tables: `../final_data/`.
+- Final vector tables: `data/`.
 
 The archived code retains the exact original data contracts. It does not
 silently substitute a new symmetry tolerance, tokenizer, split, or vector row

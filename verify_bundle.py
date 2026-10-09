@@ -10,8 +10,7 @@ from pathlib import Path
 
 
 CODE_ROOT = Path(__file__).resolve().parent
-WORKSPACE = CODE_ROOT.parent
-DATA_ROOT = WORKSPACE / "final_data"
+DATA_ROOT = CODE_ROOT / "data"
 
 TABLES = {
     "kg": (DATA_ROOT / "kg" / "entity_embeddings.tsv", 1731, 200),
@@ -43,28 +42,28 @@ TABLES = {
 }
 
 EXPECTED_HASHES = {
-    "final_data/kg/entity_embeddings.tsv": (
+    "data/kg/entity_embeddings.tsv": (
         "8672f13f2b2fdea234ddcdd5b38571e8ba03c42a512993f6beaecc4f3a5995ea"
     ),
-    "final_data/kg/entity_embeddings_full.tsv": (
+    "data/kg/entity_embeddings_full.tsv": (
         "700849834ce3bfc4348eba4fb8393dddbd1001d9b94c7f6b06526bfcbe5afc62"
     ),
-    "final_data/lm/entity_embeddings.tsv": (
+    "data/lm/entity_embeddings.tsv": (
         "dbf6431380b67535e441f7c7632e7aeca1320d85ffeedab75cc0f59489a7ed3c"
     ),
-    "final_data/lm/wp_training_coverage.tsv": (
+    "data/lm/wp_training_coverage.tsv": (
         "66800000b5ff44c2dfd28b49d08d00d67835003e09a8a4db2e538734f45a55df"
     ),
-    "final_code/downstream/data/representations/wren444/entity_embeddings.tsv": (
+    "downstream/data/representations/wren444/entity_embeddings.tsv": (
         "c3051949c2ac55fab7e9f03fc444e28a981689c331634ffc88a352a0528cba99"
     ),
-    "final_code/downstream/data/representations/onehot_1731/entity_embeddings.tsv": (
+    "downstream/data/representations/onehot_1731/entity_embeddings.tsv": (
         "b42a493886dbe59c92c4b08756a50d62dd6133fad07c9a0a55dd7dbaf9e9e630"
     ),
-    "final_code/lm/data/corpus/train.jsonl.gz": (
+    "lm/data/corpus/train.jsonl.gz": (
         "8bea52a4535552166cd5b0698c802038c36c30ef9b155ae07fc9a552bd33d23a"
     ),
-    "final_code/lm/data/corpus/validation.jsonl.gz": (
+    "lm/data/corpus/validation.jsonl.gz": (
         "8d383bf845962390480f81c0b93277ac89164fa66511c2b8eb6ff29dcd6da20f"
     ),
 }
@@ -105,7 +104,7 @@ def main() -> None:
             raise FileNotFoundError(f"Registry coverage for {name}: {coverage}")
 
     for relative, expected in EXPECTED_HASHES.items():
-        path = WORKSPACE / relative
+        path = CODE_ROOT / relative
         actual = sha256(path)
         if actual != expected:
             raise RuntimeError(f"SHA-256 mismatch for {relative}: {actual} != {expected}")
@@ -119,13 +118,12 @@ def main() -> None:
     manifest_path = CODE_ROOT / "manifest.sha256"
     files = sorted(
         path
-        for root in (CODE_ROOT, DATA_ROOT)
-        for path in root.rglob("*")
+        for path in CODE_ROOT.rglob("*")
         if path.is_file()
         and path != manifest_path
         and "__pycache__" not in path.parts
     )
-    lines = [f"{sha256(path)}  {path.relative_to(WORKSPACE).as_posix()}" for path in files]
+    lines = [f"{sha256(path)}  {path.relative_to(CODE_ROOT).as_posix()}" for path in files]
     manifest_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(
         json.dumps(
