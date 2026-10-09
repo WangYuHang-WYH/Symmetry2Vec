@@ -1,0 +1,57 @@
+{
+  "graph_non_lattice_triples_unchanged": true,
+  "registry_entry": {
+    "coverage": null,
+    "dimension": 200,
+    "full_graph_archive": {
+      "dimension": 200,
+      "path": "vectors/kg/entity_embeddings_full.tsv",
+      "rows": 5691,
+      "sha256": "700849834ce3bfc4348eba4fb8393dddbd1001d9b94c7f6b06526bfcbe5afc62",
+      "used_for_downstream": false
+    },
+    "method": "standard_transe_kg_standard_14_bravais_wp_rows",
+    "path": "vectors/kg/entity_embeddings.tsv",
+    "relation_embeddings": {
+      "dimension": 200,
+      "path": "vectors/kg/relation_embeddings.tsv",
+      "rows": 14,
+      "sha256": "93d5c554d3680e2fd886ed165f6232b33dc75087e09fde2e4a2be876b958adf8"
+    },
+    "rows": 1731,
+    "sha256": "8672f13f2b2fdea234ddcdd5b38571e8ba03c42a512993f6beaecc4f3a5995ea",
+    "source": {
+      "bravais_mapping": "vectors/kg/bravais_lattice_mapping.tsv",
+      "bravais_mapping_sha256": "33479871f4b5b629713b38ff9d13bd3999e0f9f095ee3759417309a9df3d4cb2",
+      "change": "standard setting-independent 14-Bravais-lattice mapping",
+      "final_metrics": {
+        "active_margin_fraction": 0.000574052812858783,
+        "epoch": 1000.0,
+        "loss": 0.00018687878967195217,
+        "mean_negative_distance": 30.313428705095475,
+        "mean_positive_distance": 24.87593775335116
+      },
+      "graph_manifest": "vectors/kg/kg_graph_manifest.json",
+      "graph_manifest_sha256": "a748b4e476515a7cfdf5d202c80ac6059140a5ac1afe22a38887a4a3ba83ab02",
+      "lattice_nodes": 14,
+      "parent": "base_kg",
+      "space_group_lattice_edges": 230,
+      "training_config": {
+        "batch_size": 4096,
+        "device": "cuda:0",
+        "dim": 200,
+        "distance_norm": 1,
+        "epochs": 1000,
+        "lr": 0.001,
+        "margin": 1.0,
+        "negative_ratio": 4,
+        "seed": 13
+      },
+      "training_summary": "vectors/kg/training_summary.json",
+      "training_summary_sha256": "f77f60ab3680a04b2df2bcc0becbcce8c9580a6f045e3fbea27a02bbb8c9a59e"
+    }
+  },
+  "representation": "kg",
+  "schema_version": "1.0.0",
+  "wp_ids_match_base_kg": true
+}

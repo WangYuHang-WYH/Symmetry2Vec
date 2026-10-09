@@ -1,0 +1,127 @@
+{
+  "audit": {
+    "legacy_lattice_edges": 228,
+    "legacy_lattice_node_ids": [
+      "LATTICE_TYPE:1",
+      "LATTICE_TYPE:10",
+      "LATTICE_TYPE:11",
+      "LATTICE_TYPE:12",
+      "LATTICE_TYPE:13",
+      "LATTICE_TYPE:14",
+      "LATTICE_TYPE:15",
+      "LATTICE_TYPE:2",
+      "LATTICE_TYPE:3",
+      "LATTICE_TYPE:4",
+      "LATTICE_TYPE:6",
+      "LATTICE_TYPE:7",
+      "LATTICE_TYPE:8",
+      "LATTICE_TYPE:9"
+    ],
+    "legacy_lattice_nodes": 14,
+    "legacy_unmapped_space_groups": [
+      "SG:001",
+      "SG:002"
+    ],
+    "mapping_counts": {
+      "aP": 2,
+      "cF": 11,
+      "cI": 10,
+      "cP": 15,
+      "hP": 45,
+      "hR": 7,
+      "mC": 5,
+      "mP": 8,
+      "oC": 15,
+      "oF": 5,
+      "oI": 9,
+      "oP": 30,
+      "tI": 19,
+      "tP": 49
+    },
+    "non_lattice_triples_unchanged": true,
+    "source_graph": {
+      "nodes_sha256": "70acc2cd416addc650e3bf53c6847ed53afd50c0f8d9fb0dfca44d10fddaa7e9",
+      "path": "/home/ubuntu/wyh/other2vec/knowledge_graph_wp_lm/data/base_graph_source",
+      "triples_sha256": "72e47a2244d639038a4694aba25c0498711a20a04d823ec376a8cd97c70c96ca"
+    },
+    "standard_lattice_edges": 230,
+    "standard_lattice_node_ids": [
+      "LATTICE_TYPE:aP",
+      "LATTICE_TYPE:cF",
+      "LATTICE_TYPE:cI",
+      "LATTICE_TYPE:cP",
+      "LATTICE_TYPE:hP",
+      "LATTICE_TYPE:hR",
+      "LATTICE_TYPE:mC",
+      "LATTICE_TYPE:mP",
+      "LATTICE_TYPE:oC",
+      "LATTICE_TYPE:oF",
+      "LATTICE_TYPE:oI",
+      "LATTICE_TYPE:oP",
+      "LATTICE_TYPE:tI",
+      "LATTICE_TYPE:tP"
+    ],
+    "standard_lattice_nodes": 14
+  },
+  "bravais_mapping_basis": "International space-group type number; setting-independent",
+  "change": "Replace PyXtal lattice_id categories with the standard 14 Bravais lattices and map every International space-group type 1..230.",
+  "files": {
+    "bravais_lattice_mapping.tsv": {
+      "bytes": 11127,
+      "sha256": "33479871f4b5b629713b38ff9d13bd3999e0f9f095ee3759417309a9df3d4cb2"
+    },
+    "graph.graphml": {
+      "bytes": 7501279,
+      "sha256": "bfd12f94173723e77e3ff1ed0a93f211a7c82a7eb57e0c19380d8514fea85aa0"
+    },
+    "nodes.tsv": {
+      "bytes": 445747,
+      "sha256": "d4355978b83524df3340b7f2d31e1bb87d5de5bbb532243ae8bbfb84fdf410e6"
+    },
+    "relations.tsv": {
+      "bytes": 370,
+      "sha256": "12a8742e7fe97fea13fe9111cae59cc22b0edfa2b6258e5df73bc5c9ecd0bef7"
+    },
+    "summary.json": {
+      "bytes": 771,
+      "sha256": "10b5402815ee371239a5fd3ab894d092c3c253b10939e37d67bdbb5d239ba89a"
+    },
+    "triples.tsv": {
+      "bytes": 2353649,
+      "sha256": "7abc0d26ab35c5f31f9d9a8c69e0cc01a26aab34a45a30141113e11afdf65e04"
+    }
+  },
+  "graph_summary": {
+    "node_types": {
+      "crystal_system": 7,
+      "lattice_type": 14,
+      "multiplicity": 17,
+      "point_group": 32,
+      "site_symmetry": 78,
+      "space_group": 230,
+      "symmetry_operation": 3582,
+      "wyckoff_position": 1731
+    },
+    "num_nodes": 5691,
+    "num_triples": 49647,
+    "relation_counts": {
+      "has_crystal_system": 230,
+      "has_lattice_type": 230,
+      "has_max_subgroup": 1293,
+      "has_min_supergroup": 1293,
+      "has_multiplicity": 1731,
+      "has_point_group": 230,
+      "has_site_symmetry": 1731,
+      "has_wyckoff_position": 1731,
+      "operation_in_space_group": 4425,
+      "operation_in_wyckoff": 14433,
+      "site_symmetry_of_wyckoff": 1731,
+      "space_group_has_operation": 4425,
+      "wyckoff_has_operation": 14433,
+      "wyckoff_in_space_group": 1731
+    }
+  },
+  "kg_version": "KG",
+  "parent": "base KG graph",
+  "schema_version": "1.0.0"
+}

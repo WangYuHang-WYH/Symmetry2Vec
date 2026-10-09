@@ -1,0 +1,77 @@
+{
+  "checks": {
+    "full_contains_all_wp_ids": true,
+    "graph_nodes_5691": true,
+    "graph_triples_49647": true,
+    "base_kg_dimension_200": true,
+    "non_lattice_triples_unchanged": true,
+    "registry_full_hash_matches": true,
+    "registry_relation_hash_matches": true,
+    "registry_wp_hash_matches": true,
+    "space_group_lattice_edges_230": true,
+    "standard_lattice_nodes_14": true,
+    "training_config_matches_base_kg": true,
+    "training_entities_5691": true,
+    "training_relations_14": true,
+    "wp_ids_match_base_kg_order": true
+  },
+  "final_metrics": {
+    "active_margin_fraction": 0.000574052812858783,
+    "epoch": 1000.0,
+    "loss": 0.00018687878967195217,
+    "mean_negative_distance": 30.313428705095475,
+    "mean_positive_distance": 24.87593775335116
+  },
+  "schema_version": "1.0.0",
+  "status": "passed",
+  "tables": {
+    "full": {
+      "dimension": 200,
+      "finite": true,
+      "path": "/home/ubuntu/wyh/other2vec/knowledge_graph_wp_lm/final_wp_benchmark/vectors/kg/entity_embeddings_full.tsv",
+      "rows": 5691,
+      "sha256": "700849834ce3bfc4348eba4fb8393dddbd1001d9b94c7f6b06526bfcbe5afc62"
+    },
+    "relations": {
+      "dimension": 200,
+      "finite": true,
+      "identifiers": [
+        "has_crystal_system",
+        "has_lattice_type",
+        "has_max_subgroup",
+        "has_min_supergroup",
+        "has_multiplicity",
+        "has_point_group",
+        "has_site_symmetry",
+        "has_wyckoff_position",
+        "operation_in_space_group",
+        "operation_in_wyckoff",
+        "site_symmetry_of_wyckoff",
+        "space_group_has_operation",
+        "wyckoff_has_operation",
+        "wyckoff_in_space_group"
+      ],
+      "path": "/home/ubuntu/wyh/other2vec/knowledge_graph_wp_lm/final_wp_benchmark/vectors/kg/relation_embeddings.tsv",
+      "rows": 14,
+      "sha256": "93d5c554d3680e2fd886ed165f6232b33dc75087e09fde2e4a2be876b958adf8"
+    },
+    "wp": {
+      "dimension": 200,
+      "finite": true,
+      "path": "/home/ubuntu/wyh/other2vec/knowledge_graph_wp_lm/final_wp_benchmark/vectors/kg/entity_embeddings.tsv",
+      "rows": 1731,
+      "sha256": "8672f13f2b2fdea234ddcdd5b38571e8ba03c42a512993f6beaecc4f3a5995ea"
+    }
+  },
+  "training_config": {
+    "batch_size": 4096,
+    "device": "cuda:0",
+    "dim": 200,
+    "distance_norm": 1,
+    "epochs": 1000,
+    "lr": 0.001,
+    "margin": 1.0,
+    "negative_ratio": 4,
+    "seed": 13
+  }
+}
