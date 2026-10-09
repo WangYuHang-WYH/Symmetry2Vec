@@ -1,14 +1,12 @@
 # Final Symmetry2Vec code and data bundle
 
 This bundle contains the archived code and local data required to reproduce the
-KG and LM WP vectors and to run the Final Matbench downstream
+KG and LM vectors and to run the Final Matbench downstream
 experiments for KG, LM, Wren, one-hot, and coordination
 ABX one-hot.
 
 All commands below assume Linux, CUDA, and that the current directory is the
-relevant component directory. The original experiments used the `wyh_env`
-Conda environment. Package versions recorded from the experiment machine are
-listed in `requirements.txt`.
+relevant component directory.
 
 ## Directory layout
 
@@ -148,7 +146,7 @@ sequentially in five independent child processes, so the RNG is reset to seed
 Default settings are 1,000 epochs, patience 100, batch size 128, validation
 fraction 0.1, fold/validation seed 42, no site-symmetry input channel, and a
 0.48 per-process CUDA memory fraction. Element features are the packaged
-Mat2Vec table. Space groups and WP assignments are recomputed from each
+Mat2Vec table. Space groups and Wyckoff position assignments are recomputed from each
 Matbench `Structure` with pymatgen `SpacegroupAnalyzer` using `symprec=0.1`
 and `angle_tolerance=5.0`; pymatgen uses spglib underneath.
 
