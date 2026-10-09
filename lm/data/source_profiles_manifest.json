@@ -1,0 +1,98 @@
+{
+  "canonical_vocabulary": {
+    "site_symmetries": 78,
+    "space_groups": 230,
+    "training_coverage_complete": true,
+    "wyckoff_positions": 1731
+  },
+  "complete": true,
+  "completed_at": "2026-08-27T08:35:32.783814+00:00",
+  "composition_aware": true,
+  "corpus_type": "mp_official_canonical_fixed_text_coverage_v2",
+  "counts": {
+    "canonical_coverage_sentences": 173100,
+    "failures": 0,
+    "input_records": 154377,
+    "n_sentences": 327477,
+    "orbit_blocks": 2234958,
+    "site_symbol_mismatches": 0,
+    "successful_texts": 154377,
+    "token_occurrences": 27848503,
+    "training_token_occurrences": 25425103
+  },
+  "empirical_vocabulary": {
+    "elements": 89,
+    "site_symmetries": 77,
+    "space_groups": 228,
+    "wyckoff_positions": 1606
+  },
+  "failed_samples_in_training": 0,
+  "failure_fraction": 0.0,
+  "fixed_text_template": "The chemical formula is {formula}. Its crystal structure is in the [SG] space group. {WP multiplicity} {element} at Wyckoff position [WP] with site symmetry [SS].",
+  "full_release": true,
+  "generator_config": {
+    "angle_tolerance": 5.0,
+    "batch_size": 512,
+    "canonical_cell_source": "spglib canonical-Hall dataset std_lattice/std_positions/std_types",
+    "canonical_hall": true,
+    "coverage_repeats": 100,
+    "coverage_template": "The Wyckoff position WP has site symmetry SS and belongs to space group SG",
+    "coverage_token_distances": {
+      "WP_to_SG": 10,
+      "WP_to_SS": 4
+    },
+    "kg_nodes": "data/kg/nodes.tsv",
+    "max_records_per_group": null,
+    "selected_groups": [
+      "nelements_01",
+      "nelements_02",
+      "nelements_03",
+      "nelements_04",
+      "nelements_05",
+      "nelements_06",
+      "nelements_07",
+      "nelements_08",
+      "nelements_09",
+      "nelements_10",
+      "nelements_11",
+      "nelements_12",
+      "nelements_13",
+      "nelements_14",
+      "nelements_15",
+      "nelements_16",
+      "nelements_17",
+      "nelements_18",
+      "nelements_19",
+      "nelements_20",
+      "nelements_21_200"
+    ],
+    "source_dir": "data/mp_official_cifs_current",
+    "source_manifest_sha256": "60c8f2e000d4e9cdc63c07d68d26030c6428a5ff131e94eb565770e6bb4545fe",
+    "standardize_conventional": true,
+    "symprec": 0.1,
+    "workers": 4
+  },
+  "memory_monitor": {
+    "minimum_system_available_bytes": 234291613696,
+    "minimum_system_available_gib": 218.20106887817383,
+    "peak_process_tree_rss_bytes": 543301632,
+    "peak_process_tree_rss_gib": 0.5059890747070312,
+    "sample_path": "data/corpora/mp_official_fixed_text_canonical_hall_coverage_v2/memory_usage.jsonl",
+    "samples": 190
+  },
+  "metadata_only_fields": [
+    "structure_id",
+    "source_archive",
+    "source_index"
+  ],
+  "pure_symmetry_only": false,
+  "schema_version": "1.0.0",
+  "sentence_path": "data/corpora/mp_official_fixed_text_canonical_hall_coverage_v2/sentences.txt",
+  "sentences_bytes": 165020702,
+  "sentences_sha256": "51a50778283e5d54f60ec9a59183bbac8945e9056b81c70d176033f4ceb39953",
+  "source_database_version": "2026.04.13",
+  "source_dataset": "Materials Project current non-deprecated Summary collection",
+  "source_manifest": "data/mp_official_cifs_current/manifest.json",
+  "source_manifest_sha256": "60c8f2e000d4e9cdc63c07d68d26030c6428a5ff131e94eb565770e6bb4545fe",
+  "training_tokenization": "whitespace tokens with brackets and sentence punctuation removed; formulae are split into element-symbol and stoichiometric-number tokens"
+}

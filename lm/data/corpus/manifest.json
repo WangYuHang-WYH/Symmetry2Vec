@@ -1,0 +1,46 @@
+{
+  "canonical_coverage_sentences_used": false,
+  "corpus_type": "mp_official_fixed_text_wp_mlm",
+  "counts": {
+    "canonical_wp_rows": 1731,
+    "corpus_word_vocabulary": 2130,
+    "input_structures": 154377,
+    "observed_mp_wp_rows": 1606,
+    "train_structures": 152806,
+    "train_word_tokens": 27700468,
+    "train_wp_occurrences": 2213688,
+    "unobserved_mp_wp_rows": 125,
+    "validation_structures": 1571,
+    "validation_word_tokens": 268347,
+    "validation_wp_occurrences": 21270
+  },
+  "files": {
+    "train": {
+      "bytes": 11826509,
+      "path": "data/corpora/mp_official_wp_mlm_fixed_text_v1/train.jsonl.gz",
+      "sha256": "8bea52a4535552166cd5b0698c802038c36c30ef9b155ae07fc9a552bd33d23a"
+    },
+    "validation": {
+      "bytes": 146541,
+      "path": "data/corpora/mp_official_wp_mlm_fixed_text_v1/validation.jsonl.gz",
+      "sha256": "8d383bf845962390480f81c0b93277ac89164fa66511c2b8eb6ff29dcd6da20f"
+    }
+  },
+  "forced_train_structures_for_wp_coverage": 0,
+  "labels_used": false,
+  "profile_shards": 21,
+  "schema_version": "1.0.0",
+  "seed": 42,
+  "source_profile_dir": "data/corpora/mp_official_fixed_text_canonical_hall_coverage_v2/profiles",
+  "split_wp_coverage": {
+    "train": 1606,
+    "validation": 725
+  },
+  "template": "The chemical formula is {element amount tokens}. Its crystal structure is in the SG space group. {multiplicity} {element} at Wyckoff position WP with site symmetry SS.",
+  "token_contract": "Stored tokens are exact pre-tokenized words; period is one token.",
+  "validation_fraction_requested": 0.01,
+  "wp_vocabulary": {
+    "path": "data/corpora/mp_official_wp_mlm_fixed_text_v1/canonical_wp_vocabulary.tsv",
+    "sha256": "3310486e30d9b11424a0721b4894bc23e4855698745c0e17541077c6ce8f5309"
+  }
+}

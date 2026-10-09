@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "seed": 42,
+  "wp_dimension": 200,
+  "corpus": {
+    "output_dir": "data/corpus",
+    "validation_fraction": 0.01,
+    "use_labels": false,
+    "use_canonical_coverage_sentences": false
+  },
+  "tokenizer": {
+    "base_model": "resources/bert-base-cased",
+    "output_dir": "resources/tokenizer",
+    "max_length": 512,
+    "add_every_corpus_word": true,
+    "add_all_1731_wp_tokens": true
+  },
+  "training": {
+    "output_dir": "artifacts/lm",
+    "encoded_cache_dir": "artifacts/lm_shared_cache",
+    "epochs": 10,
+    "early_stopping_patience": 3,
+    "early_stopping_min_delta": 0.0001,
+    "bert_learning_rate": 0.00002,
+    "wp_learning_rate": 0.0005,
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.1,
+    "max_grad_norm": 1.0,
+    "batch_size_per_gpu": 32,
+    "eval_batch_size": 64,
+    "gradient_accumulation_steps": 1,
+    "precision": "fp16",
+    "gradient_checkpointing": true,
+    "attention_implementation": "eager",
+    "chunk_words": 510,
+    "wp_mask_probability": 0.15,
+    "mask_replacement": "target_wp_multiplicity_site_symmetry_group_mask",
+    "prediction_classes": "empirically_observed_mp_wp_only",
+    "num_workers": 4
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "seed": 42,
+  "wp_nodes": "data/canonical_wp_source/nodes.tsv",
+  "corpus": {
+    "source_profile_dir": "data/source_profiles",
+    "output_dir": "data/corpus",
+    "validation_fraction": 0.01,
+    "use_labels": false,
+    "use_canonical_coverage_sentences": false
+  },
+  "tokenizer": {
+    "base_model": "resources/bert-base-cased",
+    "output_dir": "resources/tokenizer",
+    "max_length": 512,
+    "add_every_corpus_word": true,
+    "add_all_1731_wp_tokens": true
+  }
+}
