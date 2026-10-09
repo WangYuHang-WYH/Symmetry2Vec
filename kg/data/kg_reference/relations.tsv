@@ -1,0 +1,15 @@
+relation	count
+has_crystal_system	230
+has_lattice_type	230
+has_max_subgroup	1293
+has_min_supergroup	1293
+has_multiplicity	1731
+has_point_group	230
+has_site_symmetry	1731
+has_wyckoff_position	1731
+operation_in_space_group	4425
+operation_in_wyckoff	14433
+site_symmetry_of_wyckoff	1731
+space_group_has_operation	4425
+wyckoff_has_operation	14433
+wyckoff_in_space_group	1731
