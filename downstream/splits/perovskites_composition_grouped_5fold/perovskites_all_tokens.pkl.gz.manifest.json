@@ -1,0 +1,124 @@
+{
+  "angle_tolerance": 5.0,
+  "assignments_sha256": "a703f942f6ab737ca29852919e3ce54ccc2e0a242383299fd23cb4a91dcb2185",
+  "cache_bytes": 370507,
+  "cache_path": "/home/ubuntu/wyh/other2vec/knowledge_graph_wp_lm/final_wp_benchmark/splits/perovskites_composition_grouped_5fold/perovskites_all_tokens.pkl.gz",
+  "cache_sha256": "239a9784678186cb35e8e0d7feda85c93f98a3e99ad21afc02c2e1f979862933",
+  "dataset_order": "task.df natural order",
+  "material_ids_sha256": "3a5c7635f1d60f882ab20b6e41a17dff826ff504e585f4bec34ec78f561f2cf0",
+  "sample_count": 18928,
+  "schema_version": "1.0.0",
+  "script_sha256": "3714db727f4500faece230c3edd71c4ae13439627062d5831de198e84fb7e044",
+  "source_caches": [
+    {
+      "fold": 0,
+      "metadata": {
+        "angle_tolerance": 5.0,
+        "fold": 0,
+        "format_version": 1,
+        "limit": null,
+        "random_state": 42,
+        "split_lengths": {
+          "test": 3786,
+          "train": 13628,
+          "val": 1514
+        },
+        "symprec": 0.1,
+        "task_name": "matbench_perovskites",
+        "val_fraction": 0.1
+      },
+      "path": "/home/ubuntu/wyh/crabnet_symmetry2vec/CrabNet-master/artifacts/feature_cache/final_fold_seed42/stable_perovskites/matbench_perovskites_fold0_tokens.pkl.gz",
+      "sha256": "a6b5c1be5b1ec2a24ed0286b8444a628e8ee49de661cd9c93e3cad456f2b38d3",
+      "test_samples": 3786
+    },
+    {
+      "fold": 1,
+      "metadata": {
+        "angle_tolerance": 5.0,
+        "fold": 1,
+        "format_version": 1,
+        "limit": null,
+        "random_state": 42,
+        "split_lengths": {
+          "test": 3786,
+          "train": 13628,
+          "val": 1514
+        },
+        "symprec": 0.1,
+        "task_name": "matbench_perovskites",
+        "val_fraction": 0.1
+      },
+      "path": "/home/ubuntu/wyh/crabnet_symmetry2vec/CrabNet-master/artifacts/feature_cache/final_fold_seed42/stable_perovskites/matbench_perovskites_fold1_tokens.pkl.gz",
+      "sha256": "07efee75b7734bb30e3d972306ffef1777bcae557238f25c5ffb44d044403a26",
+      "test_samples": 3786
+    },
+    {
+      "fold": 2,
+      "metadata": {
+        "angle_tolerance": 5.0,
+        "fold": 2,
+        "format_version": 1,
+        "limit": null,
+        "random_state": 42,
+        "split_lengths": {
+          "test": 3786,
+          "train": 13628,
+          "val": 1514
+        },
+        "symprec": 0.1,
+        "task_name": "matbench_perovskites",
+        "val_fraction": 0.1
+      },
+      "path": "/home/ubuntu/wyh/crabnet_symmetry2vec/CrabNet-master/artifacts/feature_cache/final_fold_seed42/stable_perovskites/matbench_perovskites_fold2_tokens.pkl.gz",
+      "sha256": "890a6c24aaf05671c6cec9f0e6c6eaa329ca8040aa17215f980173111d3d28a8",
+      "test_samples": 3786
+    },
+    {
+      "fold": 3,
+      "metadata": {
+        "angle_tolerance": 5.0,
+        "fold": 3,
+        "format_version": 1,
+        "limit": null,
+        "random_state": 42,
+        "split_lengths": {
+          "test": 3785,
+          "train": 13629,
+          "val": 1514
+        },
+        "symprec": 0.1,
+        "task_name": "matbench_perovskites",
+        "val_fraction": 0.1
+      },
+      "path": "/home/ubuntu/wyh/crabnet_symmetry2vec/CrabNet-master/artifacts/feature_cache/final_fold_seed42/stable_perovskites/matbench_perovskites_fold3_tokens.pkl.gz",
+      "sha256": "39b16e32d7a2f90433f7d43f46225e6ed39ab89293380820c653dee037cae310",
+      "test_samples": 3785
+    },
+    {
+      "fold": 4,
+      "metadata": {
+        "angle_tolerance": 5.0,
+        "fold": 4,
+        "format_version": 1,
+        "limit": null,
+        "random_state": 42,
+        "split_lengths": {
+          "test": 3785,
+          "train": 13629,
+          "val": 1514
+        },
+        "symprec": 0.1,
+        "task_name": "matbench_perovskites",
+        "val_fraction": 0.1
+      },
+      "path": "/home/ubuntu/wyh/crabnet_symmetry2vec/CrabNet-master/artifacts/feature_cache/final_fold_seed42/stable_perovskites/matbench_perovskites_fold4_tokens.pkl.gz",
+      "sha256": "5d07d97230fa28f1df78b4024c641cb68a5231a1989492a3912177d4acf5e0b8",
+      "test_samples": 3785
+    }
+  ],
+  "source_partition": "union of official Matbench test folds 0..4",
+  "space_group_sequence_sha256": "717c9a08acc24eb4c131d91b91fcdaf3553f15902867d055601b496bcf417d3e",
+  "split_manifest_sha256": "4953e2b32ba9b4271a0f68f89ee83c9ea66b9f8f5d7208e4a8512e2210e8ccb8",
+  "symprec": 0.1,
+  "task_name": "matbench_perovskites"
+}

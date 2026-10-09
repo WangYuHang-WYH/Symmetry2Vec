@@ -1,0 +1,92 @@
+{
+  "ambiguous_assignment_count": 12,
+  "ambiguous_assignment_positions": [
+    1,
+    4053,
+    4452,
+    5813,
+    8333,
+    10278,
+    10608,
+    13487,
+    14131,
+    15017,
+    16063,
+    18738
+  ],
+  "cache_bytes": 286744,
+  "cache_path": "/home/ubuntu/wyh/other2vec/knowledge_graph_wp_lm/final_wp_benchmark/splits/perovskites_coordination_abx/coordination_abx_tokens.pkl.gz",
+  "cache_sha256": "614df0fbb616d2befd7b588872a4bd41516f54aeadbe9fb0d0deae5cfee86fc6",
+  "coordination_differs_from_legacy_count": 18928,
+  "created_at_utc": "2026-09-28T02:55:57.286410+00:00",
+  "legacy_exact_match_count": 0,
+  "legacy_exact_match_fraction": 0.0,
+  "legacy_index_contract": {
+    "A": [
+      1
+    ],
+    "B": [
+      0
+    ],
+    "X": [
+      2,
+      3,
+      4
+    ]
+  },
+  "material_ids_sha256": "3a5c7635f1d60f882ab20b6e41a17dff826ff504e585f4bec34ec78f561f2cf0",
+  "nearest_shell_cn_counts_by_assigned_role": {
+    "A": {
+      "10": 318,
+      "12": 13508,
+      "2": 44,
+      "4": 4575,
+      "6": 184,
+      "8": 299
+    },
+    "B": {
+      "1": 40,
+      "2": 6,
+      "4": 397,
+      "6": 18485
+    },
+    "X": {
+      "1": 102,
+      "2": 56682
+    }
+  },
+  "role_assignment": {
+    "expected_coordination_numbers": {
+      "A_to_X": 12,
+      "B_to_X": 6,
+      "X_to_A": 4,
+      "X_to_B": 2
+    },
+    "global_search": "all 20 ordered choices of A and B sites",
+    "input_site_order_used_for_role_assignment": false,
+    "method": "target_resolved_periodic_coordination_topology_assignment",
+    "required_role_inventory": {
+      "A": 1,
+      "B": 1,
+      "X": 3
+    },
+    "shell_quality": "log(d[k+1]/d[k])-0.02*log(d[k]/d[1])",
+    "species_used_for_role_assignment": false,
+    "tie_break": "nearest ideal parent-perovskite roles, then normalized fractional-coordinate lexical order"
+  },
+  "role_signature_counts": {
+    "ABXXX": 17544,
+    "AXXBX": 6,
+    "AXXXB": 854,
+    "XXABX": 307,
+    "XXBAX": 217
+  },
+  "sample_count": 18928,
+  "schema_version": "1.0.0",
+  "score_margin_max": 1.0839447311760821,
+  "score_margin_median": 1.0737758688314287,
+  "score_margin_min": 0.0,
+  "script_sha256": "ba3062a2d6e3d224ac6ef5033b5dd5a4474f6460c1b11a0026dfeefc5e1d4277",
+  "target_sequence_sha256": "77c52fc5198638eeed330ecffbc7d0bbdb41186efac2a33044324c988acc5e09",
+  "task": "matbench_perovskites"
+}

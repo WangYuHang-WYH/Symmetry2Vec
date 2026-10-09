@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "canonical_id_contract": "WP:{space_group_3digits}:{standard_multiplicity}{letter}",
+  "canonical_wp_rows": 1731,
+  "representations": {
+    "kg": {
+      "path": "../data/kg/entity_embeddings.tsv",
+      "coverage": null,
+      "dimension": 200,
+      "rows": 1731,
+      "method": "standard_transe_kg_standard_14_bravais_wp_rows"
+    },
+    "lm": {
+      "path": "../data/lm/entity_embeddings.tsv",
+      "coverage": "../data/lm/wp_training_coverage.tsv",
+      "dimension": 200,
+      "rows": 1731,
+      "active_rows": 1606,
+      "method": "bert_lm_tied_wp_table"
+    },
+    "wren444": {
+      "path": "data/representations/wren444/entity_embeddings.tsv",
+      "coverage": null,
+      "dimension": 444,
+      "rows": 1731,
+      "method": "official_wren_bra_alg_off_descriptor"
+    },
+    "onehot_1731": {
+      "path": "data/representations/onehot_1731/entity_embeddings.tsv",
+      "coverage": null,
+      "dimension": 1731,
+      "rows": 1731,
+      "method": "canonical_wp_identity_matrix"
+    }
+  }
+}
