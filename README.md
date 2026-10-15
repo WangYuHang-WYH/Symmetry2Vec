@@ -28,7 +28,7 @@ Symmetry2Vec/
   downstream/
     scripts/                     Matbench and ABX launchers
     crabnet_runtime/             shared CrabNet model/runtime dependencies
-    data/                        Wren, one-hot, and Mat2Vec data
+    data/                        Wren, one-hot
     splits/                      ABX role cache and composition-grouped split
     vector_registry.json         portable representation paths
 
@@ -37,21 +37,7 @@ Symmetry2Vec/
     lm/                          final LM WP table and coverage
 ```
 
-`manifest.sha256` records SHA-256 hashes for all files in this bundle except
-the manifest itself.
-
 ## 1. KG
-
-KG starts from the frozen base graph and changes only the lattice-type
-subgraph. The legacy PyXtal setting-dependent lattice IDs are replaced by a
-setting-independent mapping from all 230 International space-group types to
-the standard 14 Bravais lattice types. All non-lattice nodes and triples are
-kept unchanged.
-
-The graph contains 5,691 entities and 49,647 directed triples. Entity types
-are 230 space groups, 1,731 Wyckoff positions, 78 site symmetries, 3,582
-coordinate entities, 32 point groups, 17 multiplicities, 7 crystal systems,
-and 14 Bravais lattice types.
 
 Train KG with the archived configuration:
 
@@ -74,16 +60,6 @@ The original graph and vector outputs are retained in
 `kg/data/kg_reference/` and `data/kg/`.
 
 ## 2. LM
-
-The packaged LM training set contains 154,377 Materials Project
-structures: 152,806 training structures and 1,571 validation structures.
-Structure profiles were standardized to conventional cells with spglib using
-`symprec=0.1`, `angle_tolerance=5.0`, and a canonical Hall setting. The corpus
-contains 1,606 empirically observed WP classes from the complete 1,731-row
-canonical vocabulary.
-
-The exact prebuilt corpus, tokenizer, and BERT initialization are included, so
-LM training does not require network access or the original MP CIF archive:
 
 ```bash
 cd Symmetry2Vec/lm
