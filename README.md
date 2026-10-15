@@ -23,8 +23,8 @@ Symmetry2Vec/
     configs/                     portable training and corpus configurations
     data/source_profiles/        canonical-Hall MP structure profiles
     data/corpus/                 exact LM train/validation JSONL corpus
-    resources/bert-base-cased/   local BERT initialization weights/tokenizer
-    resources/tokenizer/         exact extended one-word/one-token tokenizer
+    resources/bert-base-cased/   local BERT initialization weights/tokenizer  https://figshare.com/articles/dataset/Symmetry2Vec/34321095
+    resources/tokenizer/         exact extended one-word/one-token tokenizer  https://figshare.com/articles/dataset/Symmetry2Vec/34321095
   downstream/
     scripts/                     Matbench and ABX launchers
     crabnet_runtime/             shared CrabNet model/runtime dependencies
