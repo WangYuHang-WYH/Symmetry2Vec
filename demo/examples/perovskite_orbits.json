@@ -1,0 +1,8 @@
+{
+  "space_group": 221,
+  "orbits": [
+    {"element": "Ca", "wyckoff": "1a", "fraction": 0.2},
+    {"element": "Ti", "wyckoff": "1b", "fraction": 0.2},
+    {"element": "O", "wyckoff": "3c", "fraction": 0.6}
+  ]
+}
