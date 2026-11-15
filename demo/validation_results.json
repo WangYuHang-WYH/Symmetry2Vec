@@ -1,0 +1,24 @@
+{
+  "cli_atom_counts": {
+    "passed": true,
+    "exit_code": 0
+  },
+  "negative_fraction": {
+    "passed": true,
+    "exit_code": 1
+  },
+  "conflicting_space_group": {
+    "passed": true,
+    "exit_code": 1
+  },
+  "cif_text": {
+    "passed": true,
+    "exit_code": 0
+  },
+  "official_fold0": {
+    "passed": true,
+    "samples": 3786,
+    "mae_eV_per_atom": 0.04628233146113312
+  },
+  "checkpoint_sha256": "221363078e534d48672e0bda0afc90ae0e38af5538cf0fcc309123270dfb2a31"
+}
