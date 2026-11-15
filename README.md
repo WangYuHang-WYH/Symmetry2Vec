@@ -176,3 +176,7 @@ python scripts/prepare_perovskites_coordination_abx_cache.py --force
 The archived code retains the exact original data contracts. It does not
 silently substitute a new symmetry tolerance, tokenizer, split, or vector row
 order.
+
+## Hardware
+
+- GPU: NVIDIA RTX 3080 (10 GB)
