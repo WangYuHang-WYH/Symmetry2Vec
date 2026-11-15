@@ -133,14 +133,3 @@ The demo requires a checkpoint carrying the supplied model/preprocessing
 metadata and the perovskites fold-0 task identity. Keep the archived KG and
 Mat2Vec tables paired with the trained checkpoint: matching vector dimensions
 alone does not establish compatibility with newly retrained embeddings.
-
-## Verified run
-
-On the configured Linux environment with PyTorch 2.4.0 and an RTX 3080, the
-supplied checkpoint predicted all **3,786 official fold-0 test samples** with
-MAE **0.0462823 eV/atom**, without missing vectors or symmetry fallbacks.
-The example JSON, repeated orbit arguments (including 1:1:3 atom counts),
-CIF file, and inline CIF text produce the same single-sample prediction on
-CPU. Run results and checkpoint SHA-256 are recorded in
-`validation_results.json`. Small floating-point differences across devices
-and library versions are possible.
