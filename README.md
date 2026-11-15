@@ -37,6 +37,17 @@ Symmetry2Vec/
     lm/                          final LM WP table and coverage
 ```
 
+## 0. env
+
+Create a dedicated Conda environment with Python 3.9 and install the required dependencies from the repository root:
+
+conda create -n symmetry2vec python=3.9 pip -y
+conda activate symmetry2vec
+pip install -r requirements.txt
+pip check
+
+Installation took approximately 9 minutes on our Ubuntu server, including environment creation and dependency installation. Most of the time was spent downloading PyTorch and its CUDA dependencies. Installation time may vary depending on network speed and cached packages. This estimate excludes model downloads and training.
+
 ## 1. KG
 
 Train KG with the archived configuration:
