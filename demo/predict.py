@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import argparse
 from collections import defaultdict
+import io
 import json
+import lzma
 import math
 from pathlib import Path
 import re
@@ -16,7 +18,8 @@ RUNTIME = ROOT / "downstream" / "crabnet_runtime"
 
 def arguments():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--checkpoint", type=Path, default=ROOT / "demo/model_best.pth")
+    parser.add_argument("--checkpoint", type=Path, default=ROOT / "demo/model_best.pth.xz",
+                        help="XZ-packed checkpoint (automatically decompressed) or original .pth")
     parser.add_argument("--kg-vectors", type=Path, default=ROOT / "data/kg/entity_embeddings.tsv")
     parser.add_argument("--mat2vec", type=Path, default=RUNTIME / "data/element_properties/mat2vec.csv")
     parser.add_argument("--device", default="auto", help="auto, cpu, cuda, or cuda:0")
@@ -91,7 +94,11 @@ def load_predictor(args):
     torch.set_num_threads(args.cpu_threads)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu") if args.device == "auto" else torch.device(args.device)
     # The checkpoint includes dictionaries of tensors and primitive metadata only.
-    checkpoint = torch.load(args.checkpoint, map_location="cpu", weights_only=True)
+    if args.checkpoint.suffix == ".xz":
+        with lzma.open(args.checkpoint, "rb") as handle:
+            checkpoint = torch.load(io.BytesIO(handle.read()), map_location="cpu", weights_only=True)
+    else:
+        checkpoint = torch.load(args.checkpoint, map_location="cpu", weights_only=True)
     required = {"weights", "scaler_state", "model_config", "preprocessing", "task", "fold"}
     if not required.issubset(checkpoint):
         raise ValueError(f"Checkpoint is missing required metadata: {sorted(required - checkpoint.keys())}")
@@ -109,7 +116,21 @@ def load_predictor(args):
     if featurizer.sym_dim != 200 or featurizer.input_dim != checkpoint["model_config"]["input_dim"]:
         raise ValueError("Expected 200-dimensional KG vectors matching the checkpoint input dimension")
     model = OrbitCrabNet(**checkpoint["model_config"], compute_device=device).to(device)
-    model.load_state_dict(checkpoint["weights"], strict=True)
+    weights = dict(checkpoint["weights"])
+    packing = checkpoint.get("packing")
+    if packing is not None:
+        if packing.get("format") != "symmetry2vec-fp16-xz-v1":
+            raise ValueError("Unsupported checkpoint packing format")
+        expected_buffers = {"encoder.pe.pe", "encoder.ple.pe"}
+        if set(packing.get("regenerated_buffers", [])) != expected_buffers:
+            raise ValueError("Unexpected regenerated checkpoint buffers")
+        initialized = model.state_dict()
+        for name in expected_buffers:
+            if name in weights:
+                raise ValueError(f"Packed checkpoint unexpectedly contains {name}")
+            weights[name] = initialized[name]
+    # load_state_dict copies compact FP16 weights into the FP32 inference model.
+    model.load_state_dict(weights, strict=True)
     model.eval()
     scaler = checkpoint["scaler_state"]
     mean = torch.as_tensor(scaler["mean"], dtype=torch.float32, device=device)
