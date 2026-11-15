@@ -35,6 +35,11 @@ Symmetry2Vec/
   data/
     kg/                          final KG WP/full/relation vectors
     lm/                          final LM WP table and coverage
+  demo/
+    predict.py                   predict perovskites formation energy
+    model_best.pth.xz            checkpoint
+    readme.md
+    exampes/                     inputs
 ```
 
 ## 0. env
